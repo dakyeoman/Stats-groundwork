@@ -60,5 +60,22 @@ stem(round(x), scale = 1/2, atom = 10)
 #상자그림
 boxplot(x)
 
+#Part 2 Practice Questions
+#4
+x <- c(5, 5, 4, 6, 6, 6, 5, 4, 5, 12, 4, 5, 5, 6, 4, 6, 5, 5, 4, 6)
+hist(x)
 
+#5
+summary(x)
+var(x)
+mode(x)
+
+#create the function for getting MODE(최빈값)
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+#vector : x this time
+result <- getmode(x) ;result
 
