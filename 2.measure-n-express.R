@@ -62,13 +62,12 @@ boxplot(x)
 
 #Part 2 Practice Questions
 #4
-x <- c(5, 5, 4, 6, 6, 6, 5, 4, 5, 12, 4, 5, 5, 6, 4, 6, 5, 5, 4, 6)
-hist(x)
+slphour_a <- c(5, 5, 4, 6, 6, 6, 5, 4, 5, 12, 4, 5, 5, 6, 4, 6, 5, 5, 4, 6)
+hist(slphour_a)
 
 #5
-summary(x)
-var(x)
-mode(x)
+summary(slphour_a)
+var(slphour_a) #표본분산
 
 #create the function for getting MODE(최빈값)
 getmode <- function(v) {
@@ -77,5 +76,18 @@ getmode <- function(v) {
 }
 
 #vector : x this time
-result <- getmode(x) ;result
+result <- getmode(slphour_a) ;result
 
+
+#6 
+slphour_b <- c(6, 6, 6, 5, 5, 6, 7, 6, 6, 7)
+mean(slphour_b)
+var(slphour_b)
+
+#7
+stats_score <- c(74, 87, 87, 82, 99, 93, 86, 96, 78, 91, 82, 69, 89, 90, 72, 92, 89, 86, 92, 69, 76, 74, 75, 67, 96, 84, 77, 87, 79, 80, 87, 80, 92, 85, 90, 79, 83, 79, 69, 81, 80, 90, 80, 75, 89, 86, 71, 74, 88, 86, 86, 76, 85, 74, 81, 85, 74, 85, 85, 88)
+s <- stats_score
+table(s)
+summary(s)
+hist(s)
+stem(round(s), scale = 1/2, atom = 10) 
