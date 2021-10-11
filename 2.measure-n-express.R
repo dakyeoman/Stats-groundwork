@@ -91,3 +91,5 @@ table(s)
 summary(s)
 hist(s)
 stem(round(s), scale = 1/2, atom = 10) 
+
+
