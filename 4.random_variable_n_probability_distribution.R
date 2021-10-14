@@ -20,3 +20,22 @@ plot(x, dunif(x, 0, 1), type="l")
 f <- function(x) ifelse(x>0 & x<1, 1, 0) # pdf값은 0<x<1이면 1, 아니면 0
 result <- integrate(f, 0.4, 0.7) #주어진 구간에서 적분(integrate())
 result $ value #확률
+
+
+#X, Y의 결합확률분포
+X.value <- c(1, 3)
+Y.value <- 0:2
+prob <- c(1/4, 1/12, 0, 1/3, 1/4, 1/12)
+prob.mat <- matrix(prob, length(X.value)) #matrix(값, 행의개수, 열의개수):확률을 행렬로 저장
+rownames(prob.mat) <- X.value
+colnames(prob.mat) <- Y.value
+prob.mat
+
+
+#X의 주변확률분포
+X.marginal <- apply(prob.mat, 1, sum)
+fractions(X.marginal)
+
+#X의 기댓값
+E.X <- sum(X.value * X.marginal)
+E.X 
