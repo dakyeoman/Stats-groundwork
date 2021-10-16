@@ -44,3 +44,24 @@ E.X
 #T의 주변확률분포표
 Y.marginal <- apply(prob.mat, 2, sum)
 fractions(Y.marginal) 
+
+#Y의 기댓값
+E.Y <- sum(Y.value * Y.marginal)
+E.Y
+
+
+
+#공분산
+#XY의 확률분포표
+XY.value <- outer(X.value, Y.value, function(x, y) x*y)
+XY.prob <- tapply(prob.mat, XY.value, sum)
+fractions(XY.prob)
+
+#XY의 기댓값
+XY.value <- as.integer(names(XY.prob))
+E.XY <- sum(XY.value * XY.prob)
+E.XY
+
+#공분산
+XY.cov <- E.XY - E.X * E.Y
+fractions(XY.cov)
