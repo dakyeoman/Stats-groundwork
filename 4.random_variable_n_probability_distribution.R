@@ -39,3 +39,8 @@ fractions(X.marginal)
 #X의 기댓값
 E.X <- sum(X.value * X.marginal)
 E.X 
+
+
+#T의 주변확률분포표
+Y.marginal <- apply(prob.mat, 2, sum)
+fractions(Y.marginal) 
