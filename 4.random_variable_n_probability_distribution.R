@@ -65,3 +65,5 @@ E.XY
 #공분산
 XY.cov <- E.XY - E.X * E.Y
 fractions(XY.cov)
+
+
