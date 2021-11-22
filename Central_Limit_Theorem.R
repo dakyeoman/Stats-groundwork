@@ -9,7 +9,7 @@ hist(population, freq=F)
 lines(density(population))
 
 
-par(mfrow =c(3, 2))
+par(m frow =c(3, 2))
 
 Sample_Mean=numeric()
 
